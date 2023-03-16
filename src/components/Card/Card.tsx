@@ -16,16 +16,14 @@ const Card: React.FunctionComponent<Props> = ({pokemon}) => {
   }
   console.log(pokemon);
   return (
-    <div className={styles.infoContainer}>
+    <div className={styles.container}>
       <Header
         name={pokemon.name}
         height={pokemon.height}
         experience={pokemon.base_experience}
-      />
-      <img
         src={pokemon.sprites.other.dream_world.front_default}
-        alt={`${pokemon.name} illustration`}
       />
+
       <Abilities abilities={pokemon.abilities} />
       <Moves moves={pokemon.moves} />
       <Stats stats={pokemon.stats} />
