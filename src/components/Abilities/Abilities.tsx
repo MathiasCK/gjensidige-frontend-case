@@ -1,14 +1,6 @@
 import React from "react";
 import Ability from "../Ability";
-
-interface IAbility {
-  ability: {
-    name: string;
-    url: string;
-  };
-  is_hidden: boolean;
-  slot: number;
-}
+import {Ability as IAbility} from "../../types";
 
 interface Props {
   abilities: IAbility[];

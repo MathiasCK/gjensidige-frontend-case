@@ -1,10 +1,8 @@
 import React from "react";
+import {NameUrlPair} from "../../types";
 
 interface Props {
-  ability: {
-    name: string;
-    url: string;
-  };
+  ability: NameUrlPair;
 }
 
 const Ability: React.FC<Props> = ({ability}) => {
