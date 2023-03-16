@@ -11,7 +11,7 @@ const Stats: React.FC<Props> = ({stats}) => {
     <div>
       <h1>Stats</h1>
       {stats.map(stat => (
-        <Stat stat={stat.stat} />
+        <Stat key={stat.stat.name} stat={stat.stat} />
       ))}
     </div>
   );
