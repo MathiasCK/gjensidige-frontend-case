@@ -1,4 +1,5 @@
 import React from "react";
+import Ability from "../Ability";
 
 interface IAbility {
   ability: {
@@ -18,7 +19,7 @@ const Abilities: React.FC<Props> = ({abilities}) => {
     <div>
       <h1>Abilities</h1>
       {abilities.map(e => (
-        <div>{e.ability.name}</div>
+        <Ability ability={e.ability} />
       ))}
     </div>
   );
