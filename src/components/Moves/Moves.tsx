@@ -1,12 +1,7 @@
 import React from "react";
 import Move from "../Move";
+import {Move as IMove} from "../../types";
 
-interface IMove {
-  move: {
-    name: string;
-    url: string;
-  };
-}
 interface Props {
   moves: IMove[];
 }

@@ -1,10 +1,8 @@
 import React from "react";
+import {NameUrlPair} from "../../types";
 
 interface Props {
-  move: {
-    name: string;
-    url: string;
-  };
+  move: NameUrlPair;
 }
 
 const Move: React.FC<Props> = ({move}) => {
