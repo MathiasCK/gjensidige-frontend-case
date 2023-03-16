@@ -1,9 +1,9 @@
-interface NameUrlPair {
+export interface NameUrlPair {
   name: string;
   url: string;
 }
 
-interface Ability {
+export interface Ability {
   ability: NameUrlPair;
   is_hidden: boolean;
   slot: number;
@@ -13,7 +13,7 @@ interface Item {
   item: NameUrlPair;
 }
 
-interface Move {
+export interface Move {
   move: NameUrlPair;
 }
 
@@ -34,6 +34,15 @@ interface TypeOfPokemon {
   type: NameUrlPair;
 }
 
+export interface Stat {
+  base_stat: 45;
+  effort: 0;
+  stat: {
+    name: string;
+    url: string;
+  };
+}
+
 export interface Pokemon {
   abilities: Ability[];
   base_experience: number;
@@ -47,5 +56,5 @@ export interface Pokemon {
   sprites: Sprites;
   types: TypeOfPokemon[];
   weight: number;
-  stats: any[];
+  stats: Stat[];
 }
