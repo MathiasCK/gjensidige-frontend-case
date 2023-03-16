@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {fetchPokemon} from "./utils";
 import {Pokemon} from "./types";
 
-import InfoContainer from "./components/InfoContainer";
+import Card from "./components/Card";
 
 const App = () => {
   const [pokemon, setPokemon] = useState<Pokemon>();
@@ -16,7 +16,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  return <InfoContainer pokemon={pokemon} />;
+  return <Card pokemon={pokemon} />;
 };
 
 export default App;
