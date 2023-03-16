@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { fetchPokemon } from './utils';
-import { Pokemon } from './types';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useEffect, useState} from "react";
+import {fetchPokemon} from "./utils";
+import {Pokemon} from "./types";
 
-import InfoContainer from './components/InfoContainer';
-
-import './app.css';
+import InfoContainer from "./components/InfoContainer";
 
 const App = () => {
   const [pokemon, setPokemon] = useState<Pokemon>();
 
   useEffect(() => {
-    fetchPokemon('bulbasaur').then((res) => setPokemon(res));
+    const fetchData = async (): Promise<void> => {
+      const pokemon: Pokemon = await fetchPokemon("bulbasaur");
+      setPokemon(pokemon);
+    };
+    fetchData();
   }, []);
 
-  return (
-    <div className='appRoot'>
-      <InfoContainer pokemon={pokemon} />
-    </div>
-  );
+  return <InfoContainer pokemon={pokemon} />;
 };
 
 export default App;

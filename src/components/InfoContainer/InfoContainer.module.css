@@ -1,8 +1,3 @@
-.appRoot {
-  display: flex;
-  justify-content: center;
-}
-
 .infoContainer {
   display: flex;
   flex-direction: column;
