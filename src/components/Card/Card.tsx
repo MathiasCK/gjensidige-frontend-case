@@ -12,9 +12,14 @@ const Card: React.FunctionComponent<Props> = ({pokemon}) => {
   if (!pokemon) {
     return <div>"Loading..."</div>;
   }
+  console.log(pokemon);
   return (
     <div className={styles.infoContainer}>
-      <Header name={pokemon.name} height={pokemon.height} />
+      <Header
+        name={pokemon.name}
+        height={pokemon.height}
+        experience={pokemon.base_experience}
+      />
       <img
         src={pokemon.sprites.other.dream_world.front_default}
         alt={`${pokemon.name} illustration`}
