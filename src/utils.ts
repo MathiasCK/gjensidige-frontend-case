@@ -1,14 +1,18 @@
-import { Pokemon } from './types';
+import {err, notFound} from "./responses";
 
-export const fetchPokemon = async (pokemonName: string) =>
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then<Pokemon>(
-    (res) => {
-      const expectedResponseCode = 200;
-      if (res.status === expectedResponseCode) {
-        return res.json();
-      }
-      throw new Error(
-        `Got HTTP status code ${res.status}, when HTTP status code ${expectedResponseCode} was expected`
-      );
+export const fetchPokemon = async (pokemonName: string) => {
+  try {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${pokemonName}`,
+    );
+
+    if (response.status === 404) {
+      return notFound(pokemonName);
     }
-  );
+
+    const data = await response.json();
+    return data;
+  } catch (e: any) {
+    err(e);
+  }
+};
