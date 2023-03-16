@@ -19,7 +19,7 @@ const Abilities: React.FC<Props> = ({abilities}) => {
     <div>
       <h1>Abilities</h1>
       {abilities.map(e => (
-        <Ability ability={e.ability} />
+        <Ability key={e.ability.name} ability={e.ability} />
       ))}
     </div>
   );
