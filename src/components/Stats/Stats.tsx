@@ -1,14 +1,6 @@
 import React from "react";
 import Stat from "../Stat";
-
-interface IStat {
-  base_stat: 45;
-  effort: 0;
-  stat: {
-    name: string;
-    url: string;
-  };
-}
+import {Stat as IStat} from "../../types";
 
 interface Props {
   stats: IStat[];

@@ -1,10 +1,8 @@
 import React from "react";
+import {NameUrlPair} from "../../types";
 
 interface Props {
-  stat: {
-    name: string;
-    url: string;
-  };
+  stat: NameUrlPair;
 }
 
 const Stat: React.FC<Props> = ({stat}) => {
