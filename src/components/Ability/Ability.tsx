@@ -17,13 +17,13 @@ const Ability: React.FC<Props> = ({ability}) => {
 
     fetchData();
   }, [ability.url]);
-  if (!abilityData) {
+  if (!abilityData?.effect_entries) {
     return <div>Loading...</div>;
   }
   return (
     <div>
       <h2>{ability.name}</h2>
-      <p>{abilityData.effect_entries[0].effect}</p>
+      <p>{abilityData?.effect_entries[0]?.effect}</p>
     </div>
   );
 };
