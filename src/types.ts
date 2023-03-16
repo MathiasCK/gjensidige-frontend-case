@@ -27,7 +27,7 @@ interface Sprites extends SimpleSprite {
 
 interface OtherSprites {
   dream_world: SimpleSprite;
-  'official-artwork': SimpleSprite;
+  "official-artwork": SimpleSprite;
 }
 
 interface TypeOfPokemon {
@@ -47,4 +47,5 @@ export interface Pokemon {
   sprites: Sprites;
   types: TypeOfPokemon[];
   weight: number;
+  stats: any[];
 }

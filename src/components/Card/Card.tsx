@@ -4,6 +4,7 @@ import styles from "./Card.module.css";
 import Header from "../Header";
 import Abilities from "../Abilities";
 import Moves from "../Moves";
+import Stats from "../Stats";
 
 interface Props {
   pokemon?: Pokemon;
@@ -27,6 +28,7 @@ const Card: React.FunctionComponent<Props> = ({pokemon}) => {
       />
       <Abilities abilities={pokemon.abilities} />
       <Moves moves={pokemon.moves} />
+      <Stats stats={pokemon.stats} />
     </div>
   );
 };
