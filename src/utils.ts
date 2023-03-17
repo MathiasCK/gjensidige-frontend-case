@@ -20,7 +20,7 @@ export const fetchPokemon = async (pokemonName: string) => {
 export const fetchAllPokemons = async () => {
   try {
     const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/pokemon?limit=50`,
+      `https://pokeapi.co/api/v2/pokemon?limit=50&offset=0`,
     );
 
     if (response.ok) {

@@ -3,6 +3,12 @@ export interface NameUrlPair {
   url: string;
 }
 
+export interface PokemonList {
+  count: number;
+  next: string;
+  results: NameUrlPair[];
+}
+
 export interface Ability {
   ability: NameUrlPair;
   is_hidden: boolean;
