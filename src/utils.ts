@@ -3,7 +3,7 @@ import {err, notFound} from "./responses";
 export const fetchPokemon = async (pokemonName: string) => {
   try {
     const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${pokemonName}`,
+      `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`,
     );
 
     if (response.status === 404) {
