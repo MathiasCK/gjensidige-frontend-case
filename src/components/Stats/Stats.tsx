@@ -3,12 +3,13 @@ import Stat from "../Stat";
 import {Stat as IStat} from "../../types";
 import styles from "./Stats.module.css";
 import {useSelector} from "react-redux";
+import Spinner from "../Spinner";
 
 const Stats: React.FC = () => {
   const {pokemon} = useSelector((state: any) => state);
 
   if (!pokemon || Object.keys(pokemon).length === 0) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   const stats: IStat[] = pokemon.stats;

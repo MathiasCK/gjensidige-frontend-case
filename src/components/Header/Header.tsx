@@ -1,12 +1,13 @@
 import React from "react";
 import {useSelector} from "react-redux";
+import Spinner from "../Spinner";
 import styles from "./Header.module.css";
 
 const Header: React.FunctionComponent = () => {
   const {pokemon} = useSelector((state: any) => state);
 
   if (!pokemon || Object.keys(pokemon).length === 0) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (

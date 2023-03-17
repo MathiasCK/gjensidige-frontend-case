@@ -3,12 +3,13 @@ import Move from "../Move";
 import {Move as IMove} from "../../types";
 import styles from "./Moves.module.css";
 import {useSelector} from "react-redux";
+import Spinner from "../Spinner";
 
 const Moves: React.FC = () => {
   const {pokemon} = useSelector((state: any) => state);
 
   if (!pokemon || Object.keys(pokemon).length === 0) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   const moves: IMove[] = pokemon.moves;
