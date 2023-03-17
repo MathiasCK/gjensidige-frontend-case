@@ -12,7 +12,7 @@ const Header: React.FunctionComponent = () => {
   return (
     <div className={styles.header}>
       <div className={styles.level}>
-        <h2>Lvl {pokemon.experience}</h2>
+        <h2>Lvl {pokemon.base_experience}</h2>
       </div>
       <div className={styles.image}>
         <img
