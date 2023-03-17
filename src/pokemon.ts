@@ -27,7 +27,6 @@ const pokemonNames = [
   "Raichu",
   "Sandshrew",
   "Sandslash",
-  "Nidoran",
   "Nidorina",
   "Nidoqueen",
   "Nidoran",
