@@ -7,14 +7,17 @@ import Card from "./components/Card";
 import SearchBar from "./components/SearchBar";
 
 import "./app.scss";
+import {useDispatch, useSelector} from "react-redux";
+import {setPokemonAction} from "./redux/actions";
 
 const App = () => {
-  const [pokemon, setPokemon] = useState<Pokemon>();
+  const dispatch = useDispatch();
+  const {pokemon} = useSelector((state: any) => state);
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       const pokemon: Pokemon = await fetchPokemon("pikachu");
-      setPokemon(pokemon);
+      dispatch(setPokemonAction(pokemon));
     };
     fetchData();
   }, []);
