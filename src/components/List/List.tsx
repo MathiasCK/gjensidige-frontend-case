@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setPokemonListAction, setPokemonAction} from "@Redux/actions";
-import {NameUrlPair, Pokemon, PokemonList} from "@Types";
-import {fetchAllPokemons, fetchPokemon, fetchPokemonTypes} from "@Utils";
+import {NameUrlPair, Pokemon, PokemonList} from "@Utils/types";
+import {fetchAllPokemons, fetchPokemon} from "@Utils/utils";
 import "./list.scss";
 import {Popup, Spinner} from "@Components";
 import uuid from "react-uuid";

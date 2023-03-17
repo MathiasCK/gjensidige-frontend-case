@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {useSelector} from "react-redux";
-import {Moves, Spinner, Header, Stats} from "../../components";
+import {Moves, Spinner, Header, Stats} from "@Components";
 
 interface Props {
   popUp: boolean;

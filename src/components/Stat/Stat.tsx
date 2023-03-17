@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {NameUrlPair} from "@Types";
+import {NameUrlPair} from "@Utils/types";
 import {Spinner} from "@Components";
 import "./stat.scss";
 

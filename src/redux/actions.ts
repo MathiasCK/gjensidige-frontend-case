@@ -1,5 +1,5 @@
-import {Pokemon, PokemonList} from "../types";
-import {SET_POKEMON, SET_POKEMON_LIST} from "./types";
+import {Pokemon, PokemonList} from "@Utils/types";
+import {SET_POKEMON, SET_POKEMON_LIST} from "@Redux/types";
 
 export const setPokemonAction = (obj: Pokemon) => ({
   type: SET_POKEMON,

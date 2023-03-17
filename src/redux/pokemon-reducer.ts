@@ -1,4 +1,4 @@
-import {SET_POKEMON, SET_POKEMON_LIST} from "./types";
+import {SET_POKEMON, SET_POKEMON_LIST} from "@Redux/types";
 
 const INITIAL_STATE = {
   pokemon: {},

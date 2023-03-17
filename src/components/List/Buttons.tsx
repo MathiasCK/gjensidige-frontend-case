@@ -1,6 +1,6 @@
 import {Spinner} from "@Components";
 import {setPokemonListAction} from "@Redux/actions";
-import {fetchPokemonTypes} from "@Utils";
+import {fetchPokemonTypes} from "@Utils/utils";
 import {useDispatch, useSelector} from "react-redux";
 
 const Buttons = () => {

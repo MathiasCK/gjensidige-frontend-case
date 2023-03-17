@@ -1,4 +1,4 @@
-import {err, notFound} from "@Responses";
+import {err, notFound} from "@Utils/responses";
 
 const base_url = "https://pokeapi.co/api/v2";
 

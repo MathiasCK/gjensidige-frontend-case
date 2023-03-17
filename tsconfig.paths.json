@@ -5,9 +5,7 @@
       "@Components": ["./components/index.ts"],
       "@Components/*": ["./components/*"],
       "@Redux/*": ["./redux/*"],
-      "@Types": ["./types.ts"],
-      "@Utils": ["./utils.ts"],
-      "@Responses": ["./responses.ts"],
+      "@Utils/*": ["./utils/*"],
       "@Assets": ["./assets/"]
     }
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import {Move, Spinner} from "@Components";
-import {Move as IMove} from "@Types";
+import {Move as IMove} from "@Utils/types";
 import "./moves.scss";
 import {useSelector} from "react-redux";
 

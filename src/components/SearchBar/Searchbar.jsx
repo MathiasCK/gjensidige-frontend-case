@@ -1,12 +1,12 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {setPokemonAction} from "@Redux/actions";
-import {fetchPokemon} from "@Utils";
 
 import FormInput from "./FormInput";
 import "./searchbar.scss";
 
-import {randomPokemon} from "../../pokemon";
+import {randomPokemon} from "@Utils/pokemon";
+import {fetchPokemon} from "@Utils/utils";
 
 const TodoAdder = () => {
   const [inputValue, setInputValue] = useState("");

@@ -1,6 +1,6 @@
 import React from "react";
 import {Stat, Spinner} from "@Components";
-import {Stat as IStat} from "../../types";
+import {Stat as IStat} from "@Utils/types";
 import "./stats.scss";
 import {useSelector} from "react-redux";
 
