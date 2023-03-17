@@ -16,3 +16,18 @@ export const fetchPokemon = async (pokemonName: string) => {
     err(e);
   }
 };
+
+export const fetchAllPokemons = async () => {
+  try {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/pokemon?limit=50`,
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    }
+  } catch (e: any) {
+    err(e);
+  }
+};
