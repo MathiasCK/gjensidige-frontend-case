@@ -11,7 +11,7 @@ const Header: React.FunctionComponent = () => {
   }
 
   return (
-    <header className="header">
+    <header className={`header ${pokemon.types[0].type.name}`}>
       <div className="header__level">
         <h2>Lvl {pokemon.base_experience}</h2>
       </div>

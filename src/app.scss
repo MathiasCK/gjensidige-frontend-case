@@ -98,3 +98,88 @@ h2:first-letter {
     }
   }
 }
+
+.fire {
+  &:is(header) {
+    background: linear-gradient(0deg, white, #e7c7a7) !important;
+  }
+  &:is(h1) {
+    color: #e7c7a7 !important;
+  }
+}
+
+.rock,
+.ground {
+  &:is(header) {
+    background: linear-gradient(0deg, white, #d5b79f) !important;
+  }
+  &:is(h1) {
+    color: #d5b79f !important;
+  }
+}
+
+.bug,
+.grass {
+  &:is(header) {
+    background: linear-gradient(0deg, white, $green) !important;
+  }
+  &:is(h1) {
+    color: $green !important;
+  }
+}
+
+.psychic,
+.electric {
+  &:is(header) {
+    background: linear-gradient(0deg, white, #fdfd96) !important;
+  }
+  &:is(h1) {
+    color: #fdec96 !important;
+  }
+}
+
+.normal {
+  &:is(header) {
+    background: linear-gradient(0deg, white, $blue) !important;
+  }
+  &:is(h1) {
+    color: $blue !important;
+  }
+}
+
+.water {
+  &:is(header) {
+    background: linear-gradient(0deg, white, #6ba1d7) !important;
+  }
+  &:is(h1) {
+    color: #6ba1d7 !important;
+  }
+}
+
+.poison,
+.ghost {
+  &:is(header) {
+    background: linear-gradient(0deg, white, #c3b1e1) !important;
+  }
+  &:is(h1) {
+    color: #c3b1e1 !important;
+  }
+}
+
+.fairy {
+  &:is(header) {
+    background: linear-gradient(0deg, white, #f8c8dc) !important;
+  }
+  &:is(h1) {
+    color: #f8c8dc !important;
+  }
+}
+
+.fighting {
+  &:is(header) {
+    background: linear-gradient(0deg, white, #d1d1d1) !important;
+  }
+  &:is(h1) {
+    color: #d1d1d1 !important;
+  }
+}

@@ -14,7 +14,7 @@ const Stats: React.FC = () => {
   const stats: IStat[] = pokemon.stats;
   return (
     <article className="info__container">
-      <h1>Stats</h1>
+      <h1 className={`${pokemon.types[0].type.name}`}>Stats</h1>
       <div className="info__container-children">
         {stats.map(stat => (
           <Stat key={stat.stat.name} stat={stat.stat} level={stat.base_stat} />

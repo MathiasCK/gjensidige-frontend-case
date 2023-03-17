@@ -15,7 +15,7 @@ const Moves: React.FC = () => {
 
   return (
     <article className="info__container">
-      <h1>Top 3 moves</h1>
+      <h1 className={`${pokemon.types[0].type.name}`}>Top 3 moves</h1>
       <div className="info__container-children">
         {moves.map((e, i) => {
           // eslint-disable-next-line array-callback-return
