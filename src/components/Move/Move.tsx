@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {NameUrlPair} from "../../types";
-import styles from "./Move.module.css";
+import Spinner from "../Spinner";
+import "./move.scss";
 
 interface Props {
   move: NameUrlPair;
@@ -20,14 +21,14 @@ const Move: React.FC<Props> = ({move}) => {
   }, [move.url]);
 
   if (!moveData) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
   return (
-    <div className={styles.move}>
+    <section>
       <h2>{moveData?.name}</h2>
       <h3>Power: {moveData?.power}</h3>
       {/* <h3>Type: {moveData?.type?.name}</h3> */}
-    </div>
+    </section>
   );
 };
 
