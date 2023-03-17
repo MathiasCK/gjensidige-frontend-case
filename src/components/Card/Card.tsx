@@ -1,8 +1,6 @@
 import React from "react";
 import "./card.scss";
-import Header from "../Header";
-import Moves from "../Moves";
-import Stats from "../Stats";
+import {Header, Moves, Stats} from "@Components";
 
 const Card: React.FunctionComponent = () => {
   return (

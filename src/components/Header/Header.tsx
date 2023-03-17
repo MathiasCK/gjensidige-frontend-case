@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import Spinner from "../Spinner";
+import {Spinner} from "@Components";
 import "./header.scss";
 
 const Header: React.FunctionComponent = () => {

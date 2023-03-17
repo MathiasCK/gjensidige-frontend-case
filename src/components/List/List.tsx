@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {setPokemonListAction, setPokemonAction} from "../../redux/actions";
-import {NameUrlPair, Pokemon, PokemonList} from "../../types";
-import {fetchAllPokemons, fetchPokemon} from "../../utils";
-import Spinner from "../Spinner";
+import {setPokemonListAction, setPokemonAction} from "@Redux/actions";
+import {NameUrlPair, Pokemon, PokemonList} from "@Types";
+import {fetchAllPokemons, fetchPokemon} from "@Utils";
 import "./list.scss";
-import Popup from "./Popup";
+import {Popup, Spinner} from "@Components";
 
 const List = () => {
   const [popUp, setPopUp] = useState(false);

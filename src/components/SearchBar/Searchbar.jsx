@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {setPokemonAction} from "../../redux/actions";
-import {fetchPokemon} from "../../utils";
+import {setPokemonAction} from "@Redux/actions";
+import {fetchPokemon} from "@Utils";
 
 import FormInput from "./FormInput";
 import "./searchbar.scss";

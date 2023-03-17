@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {useEffect, useState} from "react";
-import {fetchPokemon} from "./utils";
-import {Pokemon} from "./types";
+import {useEffect} from "react";
+import {fetchPokemon} from "@Utils";
+import {Pokemon} from "@Types";
 
 import {Card, SearchBar} from "./components";
 

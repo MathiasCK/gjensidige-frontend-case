@@ -7,3 +7,6 @@ export {default as Stats} from "./Stats";
 export {default as Spinner} from "./Spinner";
 export {default as Moves} from "./Moves";
 export {default as Header} from "./Header";
+export {default as Move} from "./Move";
+export {default as Stat} from "./Stat";
+export {default as Popup} from "./List/Popup";

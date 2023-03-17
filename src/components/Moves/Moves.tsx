@@ -1,9 +1,8 @@
 import React from "react";
-import Move from "../Move";
-import {Move as IMove} from "../../types";
+import {Move, Spinner} from "@Components";
+import {Move as IMove} from "@Types";
 import "./moves.scss";
 import {useSelector} from "react-redux";
-import Spinner from "../Spinner";
 
 const Moves: React.FC = () => {
   const {pokemon} = useSelector((state: any) => state);

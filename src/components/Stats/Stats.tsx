@@ -1,9 +1,8 @@
 import React from "react";
-import Stat from "../Stat";
+import {Stat, Spinner} from "@Components";
 import {Stat as IStat} from "../../types";
 import "./stats.scss";
 import {useSelector} from "react-redux";
-import Spinner from "../Spinner";
 
 const Stats: React.FC = () => {
   const {pokemon} = useSelector((state: any) => state);

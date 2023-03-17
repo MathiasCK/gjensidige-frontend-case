@@ -1,4 +1,3 @@
-import React from "react";
 import "./searchbar.scss";
 
 const FormInput = ({handleChange, label, ...otherProps}) => (

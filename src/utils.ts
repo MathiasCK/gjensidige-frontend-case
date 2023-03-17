@@ -1,4 +1,4 @@
-import {err, notFound} from "./responses";
+import {err, notFound} from "@Responses";
 
 export const fetchPokemon = async (pokemonName: string) => {
   try {

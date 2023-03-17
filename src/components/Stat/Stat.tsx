@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import {NameUrlPair} from "../../types";
-import Spinner from "../Spinner";
+import {NameUrlPair} from "@Types";
+import {Spinner} from "@Components";
 import "./stat.scss";
 
 interface Props {
