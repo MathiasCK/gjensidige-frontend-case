@@ -48,3 +48,21 @@ a {
   text-decoration: none;
   color: black;
 }
+
+h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+}
+
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+h2:first-letter {
+  text-transform: uppercase;
+}

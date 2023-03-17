@@ -1,7 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import Spinner from "../Spinner";
-import styles from "./Header.module.css";
+import "./header.scss";
 
 const Header: React.FunctionComponent = () => {
   const {pokemon} = useSelector((state: any) => state);
@@ -11,23 +11,22 @@ const Header: React.FunctionComponent = () => {
   }
 
   return (
-    <div className={styles.header}>
-      <div className={styles.level}>
+    <header className="header">
+      <div className="header__level">
         <h2>Lvl {pokemon.base_experience}</h2>
       </div>
-      <div className={styles.image}>
+      <div className="header__image">
         <img
           src={pokemon.sprites.other.dream_world.front_default}
           alt={`${pokemon.name} illustration`}
         />
       </div>
-      <div className={styles.name}>
+      <article className="header__info">
         <h1>{pokemon.name}</h1>
-      </div>
-      <div>
         <h2>{pokemon.types[0].type.name}</h2>
-      </div>
-    </div>
+      </article>
+      <div></div>
+    </header>
   );
 };
 
