@@ -33,10 +33,10 @@ const List = () => {
   }
 
   return (
-    <div className="list">
+    <section className="list">
       {pokemonList.results.map((pokemon: NameUrlPair) => (
-        <div key={pokemon.name}>
-          <h1>{pokemon.name}</h1>
+        <article className="list__container" key={pokemon.name}>
+          <h2>{pokemon.name}</h2>
           <button
             onClick={async () => {
               scrollToTop();
@@ -48,7 +48,7 @@ const List = () => {
           >
             Fetch info
           </button>
-        </div>
+        </article>
       ))}
       {popUp ? (
         <Popup
@@ -58,7 +58,7 @@ const List = () => {
           setPokemon={setPokemon}
         />
       ) : null}
-    </div>
+    </section>
   );
 };
 

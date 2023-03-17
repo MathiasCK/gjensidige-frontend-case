@@ -1,6 +1,17 @@
 .list {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .list__container {
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .popup__bg {
@@ -13,10 +24,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.popup {
-  background: white;
-  width: 50vw;
-  height: 50vh;
+  .popup {
+    background: white;
+    width: 50vw;
+    height: 50vh;
+  }
 }
