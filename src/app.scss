@@ -101,10 +101,10 @@ h2:first-letter {
 
 .fire {
   &:is(header) {
-    background: linear-gradient(0deg, white, #e7c7a7) !important;
+    background: linear-gradient(0deg, white, #ff6961) !important;
   }
   &:is(h1) {
-    color: #e7c7a7 !important;
+    color: #ff6961 !important;
   }
 }
 
