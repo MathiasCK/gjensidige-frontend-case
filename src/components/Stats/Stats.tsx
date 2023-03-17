@@ -2,12 +2,16 @@ import React from "react";
 import Stat from "../Stat";
 import {Stat as IStat} from "../../types";
 import styles from "./Stats.module.css";
+import {useSelector} from "react-redux";
 
-interface Props {
-  stats: IStat[];
-}
+const Stats: React.FC = () => {
+  const {pokemon} = useSelector((state: any) => state);
 
-const Stats: React.FC<Props> = ({stats}) => {
+  if (!pokemon || Object.keys(pokemon).length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  const stats: IStat[] = pokemon.stats;
   return (
     <div className={styles.stats}>
       <center>

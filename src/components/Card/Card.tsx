@@ -19,7 +19,7 @@ const Card: React.FunctionComponent = () => {
 
       {/* <Abilities abilities={pokemon.abilities} /> */}
       <Moves />
-      <Stats stats={pokemon.stats} />
+      <Stats />
     </div>
   );
 };
