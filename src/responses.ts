@@ -3,5 +3,6 @@ export const err = (e: any) => {
 };
 
 export const notFound = (pokemon: string) => {
+  alert(`404 : Pokemon "${pokemon}" not found`);
   throw new Error(`404 : Pokemon "${pokemon}" not found`);
 };

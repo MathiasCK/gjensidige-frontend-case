@@ -1,22 +1,19 @@
 import React, {useState} from "react";
+import {useDispatch} from "react-redux";
+import {setPokemonAction} from "../../redux/actions";
+import {fetchPokemon} from "../../utils";
 
 import FormInput from "./FormInput";
 import "./searchbar.scss";
 
 const TodoAdder = () => {
   const [inputValue, setInputValue] = useState("");
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    // dispatch(
-    //   addTodoAction({
-    //     id: uuidv4(),
-    //     text: inputValue,
-    //     isComplete: false,
-    //   }),
-    // );
-
+    const pokemon = await fetchPokemon(inputValue);
+    dispatch(setPokemonAction(pokemon));
     setInputValue("");
   };
 
