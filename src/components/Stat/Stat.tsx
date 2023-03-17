@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {NameUrlPair} from "../../types";
+import styles from "./Stat.module.css";
 
 interface Props {
   stat: NameUrlPair;
@@ -22,10 +23,10 @@ const Stat: React.FC<Props> = ({stat}) => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
-      <h2>
+    <div className={styles.stat}>
+      <h3>
         {statData.name} : {statData.game_index}
-      </h2>
+      </h3>
     </div>
   );
 };
