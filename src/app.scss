@@ -66,3 +66,35 @@ h3 {
 h2:first-letter {
   text-transform: uppercase;
 }
+
+.info__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  h1 {
+    font-size: 1.5rem;
+    align-self: center;
+    margin: auto 0;
+    color: #a7c7e7;
+    margin: 0.5rem 0;
+  }
+  .info__container-children {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0.5rem;
+      h2 {
+        font-size: 1rem;
+      }
+      h3 {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+}

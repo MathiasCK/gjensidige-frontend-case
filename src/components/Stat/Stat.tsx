@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {NameUrlPair} from "../../types";
-import styles from "./Stat.module.css";
+import Spinner from "../Spinner";
+import "./stat.scss";
 
 interface Props {
   stat: NameUrlPair;
@@ -21,15 +22,14 @@ const Stat: React.FC<Props> = ({stat, level}) => {
   }, [stat.url]);
 
   if (!statData) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (
-    <div className={styles.stat}>
-      <h3>
-        {statData.name} : {level}
-      </h3>
-    </div>
+    <section>
+      <h2>{statData.name}</h2>
+      <h3>Level: {level}</h3>
+    </section>
   );
 };
 
