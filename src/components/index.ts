@@ -3,3 +3,7 @@ export {default as ErrorPage} from "./ErrorPage";
 export {default as List} from "./List";
 export {default as SearchBar} from "./SearchBar";
 export {default as Card} from "./Card";
+export {default as Stats} from "./Stats";
+export {default as Spinner} from "./Spinner";
+export {default as Moves} from "./Moves";
+export {default as Header} from "./Header";

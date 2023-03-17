@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {setPokemonListAction} from "../../redux/actions";
+import {setPokemonListAction, setPokemonAction} from "../../redux/actions";
 import {NameUrlPair, Pokemon, PokemonList} from "../../types";
 import {fetchAllPokemons, fetchPokemon} from "../../utils";
 import Spinner from "../Spinner";
@@ -9,7 +9,6 @@ import Popup from "./Popup";
 
 const List = () => {
   const [popUp, setPopUp] = useState(false);
-  const [pokemon, setPokemon] = useState({});
 
   const {pokemonList} = useSelector((state: any) => state);
   const dispatch = useDispatch();
@@ -41,7 +40,7 @@ const List = () => {
             onClick={async () => {
               scrollToTop();
               const data: Pokemon = await fetchPokemon(pokemon.name);
-              setPokemon(data);
+              dispatch(setPokemonAction(data));
               setPopUp(true);
               document.body.style.overflow = "hidden";
             }}
@@ -50,14 +49,7 @@ const List = () => {
           </button>
         </article>
       ))}
-      {popUp ? (
-        <Popup
-          popUp={popUp}
-          setPopUp={setPopUp}
-          pokemon={pokemon}
-          setPokemon={setPokemon}
-        />
-      ) : null}
+      {popUp ? <Popup popUp={popUp} setPopUp={setPopUp} /> : null}
     </section>
   );
 };

@@ -25,7 +25,6 @@ const Header: React.FunctionComponent = () => {
         <h1>{pokemon.name}</h1>
         <h2>{pokemon.types[0].type.name}</h2>
       </article>
-      <div></div>
     </header>
   );
 };

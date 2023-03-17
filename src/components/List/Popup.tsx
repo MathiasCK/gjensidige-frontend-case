@@ -1,35 +1,38 @@
-import React, {FC} from "react";
-import {Pokemon} from "../../types";
-import Spinner from "../Spinner";
+import {FC} from "react";
+import {useSelector} from "react-redux";
+import {Moves, Spinner, Header, Stats} from "../../components";
 
 interface Props {
   popUp: boolean;
   setPopUp: (value: boolean) => void;
-  pokemon: Pokemon | any;
-  setPokemon: (value: Pokemon | any) => void;
 }
 
-const Popup: FC<Props> = ({popUp, setPopUp, pokemon, setPokemon}) => {
+const Popup: FC<Props> = ({popUp, setPopUp}) => {
+  const {pokemon} = useSelector((state: any) => state);
+
   if (!pokemon || Object.keys(pokemon).length === 0) {
     return <Spinner />;
   }
 
   return (
-    <div className="popup__bg">
-      <div className="popup">
-        <p>I'm A Pop Up!!!</p>
-        <h1>{pokemon.name}</h1>
-        <button
-          onClick={() => {
-            setPopUp(!popUp);
-            setPokemon({});
-            document.body.style.overflow = "scroll";
-          }}
-        >
-          Close
-        </button>
+    <>
+      <div className="popup__bg"></div>
+      <div className="popup__container">
+        <div className="popup">
+          <Header />
+          <Moves />
+          <Stats />
+          <button
+            onClick={() => {
+              setPopUp(!popUp);
+              document.body.style.overflow = "scroll";
+            }}
+          >
+            X
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
