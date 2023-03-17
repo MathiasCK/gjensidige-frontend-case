@@ -5,8 +5,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import {Provider} from "react-redux";
 import store from "./redux/store";
-import Navbar from "./components/Navbar";
-import ErrorPage from "./components/ErrorPage";
+import {Navbar, ErrorPage, List} from "./components";
 
 const container = document.getElementById("root");
 const root = createRoot(container as HTMLElement);
@@ -19,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/list",
-    element: <div>Hello list!</div>,
+    element: <List />,
   },
 ]);
 

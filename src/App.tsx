@@ -3,8 +3,7 @@ import {useEffect, useState} from "react";
 import {fetchPokemon} from "./utils";
 import {Pokemon} from "./types";
 
-import Card from "./components/Card";
-import SearchBar from "./components/SearchBar";
+import {Card, SearchBar} from "./components";
 
 import "./app.scss";
 import {useDispatch} from "react-redux";
