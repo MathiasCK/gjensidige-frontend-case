@@ -81,7 +81,6 @@ const pokemonNames = [
   "Slowbro",
   "Magnemite",
   "Magneton",
-  "Farfetch'd",
   "Doduo",
   "Dodrio",
   "Seel",

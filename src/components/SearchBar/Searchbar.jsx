@@ -6,6 +6,8 @@ import {fetchPokemon} from "../../utils";
 import FormInput from "./FormInput";
 import "./searchbar.scss";
 
+import {randomPokemon} from "../../pokemon";
+
 const TodoAdder = () => {
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
@@ -15,6 +17,11 @@ const TodoAdder = () => {
     const pokemon = await fetchPokemon(inputValue);
     dispatch(setPokemonAction(pokemon));
     setInputValue("");
+  };
+
+  const fetchRandomPokemon = async () => {
+    const pokemon = await fetchPokemon(randomPokemon());
+    dispatch(setPokemonAction(pokemon));
   };
 
   return (
@@ -30,6 +37,15 @@ const TodoAdder = () => {
         required
       />
       <button className="searchbar__button">Submit</button>
+      <button
+        type="button"
+        className="searchbar__button"
+        onClick={async () => {
+          await fetchRandomPokemon();
+        }}
+      >
+        Random
+      </button>
     </form>
   );
 };
