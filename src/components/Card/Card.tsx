@@ -11,18 +11,12 @@ interface Props {
 }
 
 const Card: React.FunctionComponent<Props> = ({pokemon}) => {
-  if (!pokemon) {
-    return <div>"Loading..."</div>;
+  if (!pokemon || Object.keys(pokemon).length === 0) {
+    return <div>Loading...</div>;
   }
-  console.log(pokemon);
   return (
     <div className={styles.container}>
-      <Header
-        name={pokemon.name}
-        experience={pokemon.base_experience}
-        src={pokemon.sprites.other.dream_world.front_default}
-        type={pokemon.types[0].type.name}
-      />
+      <Header />
 
       {/* <Abilities abilities={pokemon.abilities} /> */}
       <Moves moves={pokemon.moves} />
