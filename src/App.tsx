@@ -9,7 +9,7 @@ import "./app.scss";
 import {useDispatch} from "react-redux";
 import {setPokemonAction} from "./redux/actions";
 
-import {randomPokemon} from "./utils/pokemon";
+import {randomPokemon} from "@Utils/pokemon";
 
 const App = () => {
   const dispatch = useDispatch();
