@@ -1,13 +1,13 @@
 import {err, notFound} from "@Responses";
 
-export const fetchPokemon = async (pokemonName: string) => {
+const base_url = "https://pokeapi.co/api/v2";
+
+const fetcher = async (path: string) => {
   try {
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`,
-    );
+    const response = await fetch(`${base_url}/${path}`);
 
     if (response.status === 404) {
-      return notFound(pokemonName);
+      return notFound(response.statusText);
     }
 
     const data = await response.json();
@@ -17,30 +17,11 @@ export const fetchPokemon = async (pokemonName: string) => {
   }
 };
 
-export const fetchAllPokemons = async () => {
-  try {
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`,
-    );
+export const fetchPokemon = async (pokemonName: string) =>
+  await fetcher(`pokemon/${pokemonName.toLowerCase()}`);
 
-    if (response.ok) {
-      const data = await response.json();
-      return data;
-    }
-  } catch (e: any) {
-    err(e);
-  }
-};
+export const fetchAllPokemons = async () =>
+  await fetcher("pokemon?limit=100&offset=0");
 
-export const fetchPokemonTypes = async (type: string) => {
-  try {
-    const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
-
-    if (response.ok) {
-      const data = await response.json();
-      return data;
-    }
-  } catch (e: any) {
-    err(e);
-  }
-};
+export const fetchPokemonTypes = async (type: string) =>
+  await fetcher(`type/${type}`);
