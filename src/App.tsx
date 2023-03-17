@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
-      const pokemon: Pokemon = await fetchPokemon(randomPokemon);
+      const pokemon: Pokemon = await fetchPokemon(randomPokemon());
       dispatch(setPokemonAction(pokemon));
     };
     fetchData();

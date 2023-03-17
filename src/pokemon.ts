@@ -1,4 +1,4 @@
-const pokemon = [
+const pokemonNames = [
   "Bulbasaur",
   "Ivysaur",
   "Venusaur",
@@ -152,5 +152,5 @@ const pokemon = [
   "Mew",
 ];
 
-export const randomPokemon =
-  pokemon[Math.floor(Math.random() * pokemon.length)].toLowerCase();
+export const randomPokemon = () =>
+  pokemonNames[Math.floor(Math.random() * pokemonNames.length)].toLowerCase();
