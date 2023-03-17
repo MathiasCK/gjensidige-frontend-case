@@ -3,7 +3,7 @@ import image from "../../assets/404.png";
 import "./error.scss";
 
 const ErrorPage = () => {
-  return <img src={image} alt="" />;
+  return <img className="image" src={image} alt="" />;
 };
 
 export default ErrorPage;
