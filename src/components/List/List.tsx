@@ -17,6 +17,7 @@ const List = () => {
       dispatch(setPokemonListAction(data));
     };
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const scrollToTop = () => {
