@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {setPokemonAction} from "../../redux/actions";
 import {fetchPokemon} from "../../utils";
@@ -36,16 +36,18 @@ const TodoAdder = () => {
         label="Search for any pokemon"
         required
       />
-      <button className="searchbar__button">Submit</button>
-      <button
-        type="button"
-        className="searchbar__button"
-        onClick={async () => {
-          await fetchRandomPokemon();
-        }}
-      >
-        Random
-      </button>
+      <section className="buttons">
+        <button className="searchbar__button">Submit</button>
+        <button
+          type="button"
+          className="searchbar__button"
+          onClick={async () => {
+            await fetchRandomPokemon();
+          }}
+        >
+          Random
+        </button>
+      </section>
     </form>
   );
 };
