@@ -13,7 +13,6 @@ const Stats: React.FC = () => {
   }
 
   const stats: IStat[] = pokemon.stats;
-  console.log(stats);
   return (
     <div className={styles.stats}>
       <center>
