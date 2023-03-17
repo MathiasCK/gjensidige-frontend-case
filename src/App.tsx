@@ -10,12 +10,14 @@ import "./app.scss";
 import {useDispatch} from "react-redux";
 import {setPokemonAction} from "./redux/actions";
 
+import {randomPokemon} from "./pokemon";
+
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
-      const pokemon: Pokemon = await fetchPokemon("pikachu");
+      const pokemon: Pokemon = await fetchPokemon(randomPokemon);
       dispatch(setPokemonAction(pokemon));
     };
     fetchData();
