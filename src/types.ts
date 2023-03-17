@@ -4,8 +4,8 @@ export interface NameUrlPair {
 }
 
 export interface PokemonList {
-  count: number;
-  next: string;
+  count?: number;
+  next?: string;
   results: NameUrlPair[];
 }
 

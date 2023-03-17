@@ -31,3 +31,16 @@ export const fetchAllPokemons = async () => {
     err(e);
   }
 };
+
+export const fetchPokemonTypes = async (type: string) => {
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    }
+  } catch (e: any) {
+    err(e);
+  }
+};

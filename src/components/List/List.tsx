@@ -2,9 +2,10 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setPokemonListAction, setPokemonAction} from "@Redux/actions";
 import {NameUrlPair, Pokemon, PokemonList} from "@Types";
-import {fetchAllPokemons, fetchPokemon} from "@Utils";
+import {fetchAllPokemons, fetchPokemon, fetchPokemonTypes} from "@Utils";
 import "./list.scss";
 import {Popup, Spinner} from "@Components";
+import uuid from "react-uuid";
 
 const List = () => {
   const [popUp, setPopUp] = useState(false);
@@ -45,11 +46,23 @@ const List = () => {
     dispatch(setPokemonListAction(pokemonList));
   };
 
+  const fetchType = async (value: string) => {
+    const data: any = await fetchPokemonTypes(value);
+
+    dispatch(
+      setPokemonListAction({
+        results: data.pokemon.map((pokemon: any) => ({
+          name: pokemon.pokemon.name,
+          url: pokemon.pokemon.url,
+        })),
+      }),
+    );
+  };
+
   return (
     <section className="list">
       <section className="sort">
         <button
-          className="green"
           onClick={() => {
             sort("ASC");
           }}
@@ -57,16 +70,39 @@ const List = () => {
           ASC
         </button>
         <button
-          className="red"
           onClick={() => {
             sort("DESC");
           }}
         >
           DESC
         </button>
+        <button
+          className="fire"
+          onClick={() => {
+            fetchType("fire");
+          }}
+        >
+          Fire
+        </button>
+        <button
+          className="water"
+          onClick={() => {
+            fetchType("water");
+          }}
+        >
+          Water
+        </button>
+        <button
+          className="green"
+          onClick={() => {
+            fetchType("grass");
+          }}
+        >
+          Grass
+        </button>
       </section>
       {pokemonList.results.map((pokemon: NameUrlPair) => (
-        <article className="list__container" key={pokemon.name}>
+        <article key={uuid()} className="list__container">
           <h2>{pokemon.name}</h2>
           <button
             onClick={async () => {

@@ -123,6 +123,14 @@ h2:first-letter {
   &:is(h1) {
     color: $red !important;
   }
+  &:is(button) {
+    border: 1px solid $red;
+    color: $red;
+    &:hover {
+      background: $red;
+      color: white;
+    }
+  }
 }
 
 .rock,
@@ -162,6 +170,14 @@ h2:first-letter {
   &:is(h1) {
     color: $blue !important;
   }
+  &:is(button) {
+    border: 1px solid $blue;
+    color: $blue;
+    &:hover {
+      background: $blue;
+      color: white;
+    }
+  }
 }
 
 .water {
@@ -170,6 +186,14 @@ h2:first-letter {
   }
   &:is(h1) {
     color: #6ba1d7 !important;
+  }
+  &:is(button) {
+    border: 1px solid #6ba1d7;
+    color: #6ba1d7;
+    &:hover {
+      background: #6ba1d7;
+      color: white;
+    }
   }
 }
 
@@ -180,6 +204,14 @@ h2:first-letter {
   }
   &:is(h1) {
     color: #c3b1e1 !important;
+  }
+  &:is(button) {
+    border: 1px solid #c3b1e1;
+    color: #c3b1e1;
+    &:hover {
+      background: #c3b1e1;
+      color: white;
+    }
   }
 }
 
