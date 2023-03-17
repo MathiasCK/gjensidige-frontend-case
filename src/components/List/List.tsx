@@ -31,8 +31,40 @@ const List = () => {
     return <Spinner />;
   }
 
+  const sort = (value: string) => {
+    if (value === "ASC") {
+      pokemonList.results = pokemonList.results.sort((a: any, b: any) =>
+        a.name > b.name ? 1 : -1,
+      );
+    } else {
+      pokemonList.results = pokemonList.results.sort((a: any, b: any) =>
+        a.name > b.name ? -1 : 1,
+      );
+    }
+
+    dispatch(setPokemonListAction(pokemonList));
+  };
+
   return (
     <section className="list">
+      <section className="sort">
+        <button
+          className="green"
+          onClick={() => {
+            sort("ASC");
+          }}
+        >
+          ASC
+        </button>
+        <button
+          className="red"
+          onClick={() => {
+            sort("DESC");
+          }}
+        >
+          DESC
+        </button>
+      </section>
       {pokemonList.results.map((pokemon: NameUrlPair) => (
         <article className="list__container" key={pokemon.name}>
           <h2>{pokemon.name}</h2>

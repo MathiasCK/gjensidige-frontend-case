@@ -5,6 +5,7 @@ $header: "Lobster", cursive;
 $paragraph: "Chivo", sans-serif;
 $blue: #a7c7e7;
 $green: #a0e7a0;
+$red: #ff6961;
 
 $mobile: 400px;
 $tablet: 768px;
@@ -35,6 +36,22 @@ button {
   &:hover {
     background: $blue;
     color: white;
+  }
+  &.green {
+    border: 1px solid $green;
+    color: $green;
+    &:hover {
+      background: $green;
+      color: white;
+    }
+  }
+  &.red {
+    border: 1px solid $red;
+    color: $red;
+    &:hover {
+      background: $red;
+      color: white;
+    }
   }
 }
 
@@ -101,10 +118,10 @@ h2:first-letter {
 
 .fire {
   &:is(header) {
-    background: linear-gradient(0deg, white, #ff6961) !important;
+    background: linear-gradient(0deg, white, $red) !important;
   }
   &:is(h1) {
-    color: #ff6961 !important;
+    color: $red !important;
   }
 }
 
