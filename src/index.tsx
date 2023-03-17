@@ -6,6 +6,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./redux/store";
 import Navbar from "./components/Navbar";
+import ErrorPage from "./components/ErrorPage";
 
 const container = document.getElementById("root");
 const root = createRoot(container as HTMLElement);
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/list",
