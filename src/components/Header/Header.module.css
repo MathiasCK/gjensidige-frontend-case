@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Titillium+Web:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lobster&family=Oswald:wght@300;400;500&family=Raleway:wght@100;400&family=Titillium+Web:wght@200;400&display=swap");
 
 .header {
   display: flex;
@@ -10,6 +10,10 @@
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
   background-position: 50% 50%;
+}
+
+body {
+  /* background: #e7c7a7; */
 }
 
 .image {
@@ -26,7 +30,14 @@
 }
 
 h1 {
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+}
+h2:first-letter {
+  text-transform: uppercase;
 }
 
 .level {

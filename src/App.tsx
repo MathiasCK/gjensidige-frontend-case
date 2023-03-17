@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
-      const pokemon: Pokemon = await fetchPokemon("bulbasaur");
+      const pokemon: Pokemon = await fetchPokemon("pikachu");
       setPokemon(pokemon);
     };
     fetchData();

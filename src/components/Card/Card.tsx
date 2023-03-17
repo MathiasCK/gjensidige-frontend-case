@@ -19,12 +19,12 @@ const Card: React.FunctionComponent<Props> = ({pokemon}) => {
     <div className={styles.container}>
       <Header
         name={pokemon.name}
-        height={pokemon.height}
         experience={pokemon.base_experience}
         src={pokemon.sprites.other.dream_world.front_default}
+        type={pokemon.types[0].type.name}
       />
 
-      <Abilities abilities={pokemon.abilities} />
+      {/* <Abilities abilities={pokemon.abilities} /> */}
       <Moves moves={pokemon.moves} />
       <Stats stats={pokemon.stats} />
     </div>

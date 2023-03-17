@@ -31,6 +31,7 @@ interface OtherSprites {
 }
 
 interface TypeOfPokemon {
+  slot: number;
   type: NameUrlPair;
 }
 
