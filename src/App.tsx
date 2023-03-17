@@ -4,6 +4,9 @@ import {fetchPokemon} from "./utils";
 import {Pokemon} from "./types";
 
 import Card from "./components/Card";
+import SearchBar from "./components/SearchBar";
+
+import "./app.scss";
 
 const App = () => {
   const [pokemon, setPokemon] = useState<Pokemon>();
@@ -16,7 +19,12 @@ const App = () => {
     fetchData();
   }, []);
 
-  return <Card pokemon={pokemon} />;
+  return (
+    <>
+      <SearchBar />
+      <Card pokemon={pokemon} />
+    </>
+  );
 };
 
 export default App;
