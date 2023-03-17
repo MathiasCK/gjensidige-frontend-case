@@ -13,6 +13,7 @@ const Stats: React.FC = () => {
   }
 
   const stats: IStat[] = pokemon.stats;
+  console.log(stats);
   return (
     <div className={styles.stats}>
       <center>
@@ -20,7 +21,7 @@ const Stats: React.FC = () => {
       </center>
       <div className={styles.container}>
         {stats.map(stat => (
-          <Stat key={stat.stat.name} stat={stat.stat} />
+          <Stat key={stat.stat.name} stat={stat.stat} level={stat.base_stat} />
         ))}
       </div>
     </div>

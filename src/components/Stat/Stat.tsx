@@ -4,9 +4,10 @@ import styles from "./Stat.module.css";
 
 interface Props {
   stat: NameUrlPair;
+  level: number;
 }
 
-const Stat: React.FC<Props> = ({stat}) => {
+const Stat: React.FC<Props> = ({stat, level}) => {
   const [statData, setStatData] = useState<any>({});
 
   useEffect(() => {
@@ -22,10 +23,11 @@ const Stat: React.FC<Props> = ({stat}) => {
   if (!statData) {
     return <div>Loading...</div>;
   }
+
   return (
     <div className={styles.stat}>
       <h3>
-        {statData.name} : {statData.game_index}
+        {statData.name} : {level}
       </h3>
     </div>
   );
