@@ -6,6 +6,7 @@ import {fetchAllPokemons, fetchPokemon, fetchPokemonTypes} from "@Utils";
 import "./list.scss";
 import {Popup, Spinner} from "@Components";
 import uuid from "react-uuid";
+import Buttons from "./Buttons";
 
 const List = () => {
   const [popUp, setPopUp] = useState(false);
@@ -32,75 +33,9 @@ const List = () => {
     return <Spinner />;
   }
 
-  const sort = (value: string) => {
-    if (value === "ASC") {
-      pokemonList.results = pokemonList.results.sort((a: any, b: any) =>
-        a.name > b.name ? 1 : -1,
-      );
-    } else {
-      pokemonList.results = pokemonList.results.sort((a: any, b: any) =>
-        a.name > b.name ? -1 : 1,
-      );
-    }
-
-    dispatch(setPokemonListAction(pokemonList));
-  };
-
-  const fetchType = async (value: string) => {
-    const data: any = await fetchPokemonTypes(value);
-
-    dispatch(
-      setPokemonListAction({
-        results: data.pokemon.map((pokemon: any) => ({
-          name: pokemon.pokemon.name,
-          url: pokemon.pokemon.url,
-        })),
-      }),
-    );
-  };
-
   return (
     <section className="list">
-      <section className="sort">
-        <button
-          onClick={() => {
-            sort("ASC");
-          }}
-        >
-          ASC
-        </button>
-        <button
-          onClick={() => {
-            sort("DESC");
-          }}
-        >
-          DESC
-        </button>
-        <button
-          className="fire"
-          onClick={() => {
-            fetchType("fire");
-          }}
-        >
-          Fire
-        </button>
-        <button
-          className="water"
-          onClick={() => {
-            fetchType("water");
-          }}
-        >
-          Water
-        </button>
-        <button
-          className="green"
-          onClick={() => {
-            fetchType("grass");
-          }}
-        >
-          Grass
-        </button>
-      </section>
+      <Buttons />
       {pokemonList.results.map((pokemon: NameUrlPair) => (
         <article key={uuid()} className="list__container">
           <h2>{pokemon.name}</h2>
