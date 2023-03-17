@@ -7,12 +7,11 @@ import Card from "./components/Card";
 import SearchBar from "./components/SearchBar";
 
 import "./app.scss";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {setPokemonAction} from "./redux/actions";
 
 const App = () => {
   const dispatch = useDispatch();
-  const {pokemon} = useSelector((state: any) => state);
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
@@ -25,7 +24,7 @@ const App = () => {
   return (
     <>
       <SearchBar />
-      <Card pokemon={pokemon} />
+      <Card />
     </>
   );
 };

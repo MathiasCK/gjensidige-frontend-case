@@ -1,25 +1,24 @@
 import React from "react";
-import {Pokemon} from "../../types";
 import styles from "./Card.module.css";
 import Header from "../Header";
 import Abilities from "../Abilities";
 import Moves from "../Moves";
 import Stats from "../Stats";
+import {useSelector} from "react-redux";
 
-interface Props {
-  pokemon?: Pokemon;
-}
+const Card: React.FunctionComponent = () => {
+  const {pokemon} = useSelector((state: any) => state);
 
-const Card: React.FunctionComponent<Props> = ({pokemon}) => {
   if (!pokemon || Object.keys(pokemon).length === 0) {
     return <div>Loading...</div>;
   }
+
   return (
     <div className={styles.container}>
       <Header />
 
       {/* <Abilities abilities={pokemon.abilities} /> */}
-      <Moves moves={pokemon.moves} />
+      <Moves />
       <Stats stats={pokemon.stats} />
     </div>
   );

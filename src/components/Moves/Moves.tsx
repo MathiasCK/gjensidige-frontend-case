@@ -2,12 +2,17 @@ import React from "react";
 import Move from "../Move";
 import {Move as IMove} from "../../types";
 import styles from "./Moves.module.css";
+import {useSelector} from "react-redux";
 
-interface Props {
-  moves: IMove[];
-}
+const Moves: React.FC = () => {
+  const {pokemon} = useSelector((state: any) => state);
 
-const Moves: React.FC<Props> = ({moves}) => {
+  if (!pokemon || Object.keys(pokemon).length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  const moves: IMove[] = pokemon.moves;
+
   return (
     <div className={styles.moves}>
       <center>
