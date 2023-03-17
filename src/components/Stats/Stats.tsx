@@ -1,7 +1,7 @@
 import React from "react";
 import Stat from "../Stat";
 import {Stat as IStat} from "../../types";
-import styles from "./Stats.module.css";
+import "./stats.scss";
 import {useSelector} from "react-redux";
 import Spinner from "../Spinner";
 
@@ -14,16 +14,14 @@ const Stats: React.FC = () => {
 
   const stats: IStat[] = pokemon.stats;
   return (
-    <div className={styles.stats}>
-      <center>
-        <h1>Stats</h1>
-      </center>
-      <div className={styles.container}>
+    <article className="info__container">
+      <h1>Stats</h1>
+      <div className="info__container-children">
         {stats.map(stat => (
           <Stat key={stat.stat.name} stat={stat.stat} level={stat.base_stat} />
         ))}
       </div>
-    </div>
+    </article>
   );
 };
 
