@@ -1,5 +1,5 @@
-export const err = (e: any) => {
-  throw new Error(`${e.status} : ${e.message} `);
+export const err = (message: string) => {
+  throw new Error(message);
 };
 
 export const notFound = (pokemon: string) => {
