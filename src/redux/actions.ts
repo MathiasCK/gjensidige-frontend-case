@@ -1,5 +1,10 @@
 import {Pokemon, PokemonList} from "@Utils/types";
-import {SET_POKEMON, SET_POKEMON_LIST, SET_FAVOURITES_LIST} from "@Redux/types";
+import {
+  SET_POKEMON,
+  SET_POKEMON_LIST,
+  ADD_FAVOURITE,
+  REMOVE_FAVOURITE,
+} from "@Redux/types";
 
 export const setPokemonAction = (obj: Pokemon) => ({
   type: SET_POKEMON,
@@ -11,7 +16,12 @@ export const setPokemonListAction = (obj: PokemonList) => ({
   payload: obj,
 });
 
-export const setFavouritesListAction = (obj: Pokemon) => ({
-  type: SET_FAVOURITES_LIST,
+export const addFavouriteAction = (obj: Pokemon) => ({
+  type: ADD_FAVOURITE,
+  payload: obj,
+});
+
+export const removeFavouriteAction = (obj: Pokemon) => ({
+  type: REMOVE_FAVOURITE,
   payload: obj,
 });
