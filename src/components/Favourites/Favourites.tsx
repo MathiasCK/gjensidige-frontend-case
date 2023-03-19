@@ -1,4 +1,3 @@
-import Buttons from "@Components/List/Buttons";
 import Popup from "@Components/List/Popup";
 import Spinner from "@Components/Spinner";
 import {setPokemonAction} from "@Redux/actions";
