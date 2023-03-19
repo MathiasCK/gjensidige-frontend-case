@@ -28,6 +28,17 @@ const Navbar = () => {
             animate={{width: pathname === "/list" ? "100%" : "0%"}}
           />
         </li>
+        <li>
+          <a className="nav-link" href="/favourites">
+            Favourites
+          </a>
+          <motion.div
+            className="line"
+            transition={{duration: 0.75}}
+            initial={{width: "0%"}}
+            animate={{width: pathname === "/favourites" ? "100%" : "0%"}}
+          />
+        </li>
       </ul>
     </nav>
   );

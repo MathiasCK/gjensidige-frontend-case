@@ -10,3 +10,4 @@ export {default as Header} from "./Header";
 export {default as Move} from "./Move";
 export {default as Stat} from "./Stat";
 export {default as Popup} from "./List/Popup";
+export {default as Favourites} from "./Favourites";
