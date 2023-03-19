@@ -1,8 +1,9 @@
-import {SET_POKEMON, SET_POKEMON_LIST} from "@Redux/types";
+import {SET_POKEMON, SET_POKEMON_LIST, SET_FAVOURITES_LIST} from "@Redux/types";
 
 const INITIAL_STATE = {
   pokemon: {},
   pokemonList: {},
+  favouritesList: [],
 };
 
 export const pokemonReducer = (state = INITIAL_STATE, action: any) => {
@@ -16,6 +17,12 @@ export const pokemonReducer = (state = INITIAL_STATE, action: any) => {
       return {
         ...state,
         pokemonList: action.payload,
+      };
+    case SET_FAVOURITES_LIST:
+      // @ts-ignore
+      state.favouritesList.push(action.payload);
+      return {
+        ...state,
       };
     default:
       return state;
