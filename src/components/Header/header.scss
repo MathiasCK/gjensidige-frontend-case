@@ -11,12 +11,21 @@
   border-bottom-left-radius: 50%;
   background-position: 50% 50%;
 
-  .header__level {
-    height: 2vh;
-    font-size: 1em;
+  .header__stats {
+    display: flex;
     position: absolute;
     top: 10;
     left: 0;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-left: 1rem;
+    }
+  }
+
+  .header__level {
+    height: 2vh;
+    font-size: 1em;
     border-radius: 10px;
     background: white;
     padding: 10px;
@@ -37,5 +46,12 @@
     align-items: center;
     justify-content: space-around;
     text-transform: uppercase;
+  }
+}
+
+.star {
+  color: yellow;
+  &.empty {
+    color: white;
   }
 }
