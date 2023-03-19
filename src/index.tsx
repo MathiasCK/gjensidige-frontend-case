@@ -5,7 +5,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {Provider} from "react-redux";
 
 import store from "@Redux/store";
-import {Navbar, ErrorPage, List, Favourites} from "@Components";
+import {Navbar, ErrorPage, PokemonList, FavouritesList} from "@Components";
 
 const container = document.getElementById("root");
 const root = createRoot(container as HTMLElement);
@@ -18,11 +18,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/list",
-    element: <List />,
+    element: <PokemonList />,
   },
   {
     path: "/favourites",
-    element: <Favourites />,
+    element: <FavouritesList />,
   },
 ]);
 

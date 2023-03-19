@@ -1,26 +1,21 @@
-import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {setPokemonListAction, setPokemonAction} from "@Redux/actions";
-import {NameUrlPair, Pokemon, PokemonList} from "@Utils/types";
-import {fetchAllPokemons, fetchPokemon} from "@Utils/utils";
+import {setPokemonAction} from "@Redux/actions";
+import {NameUrlPair, Pokemon} from "@Utils/types";
+import {fetchPokemon} from "@Utils/utils";
 import "./list.scss";
-import {Popup, Spinner} from "@Components";
+import {Popup} from "@Components";
 import uuid from "react-uuid";
+import {useDispatch} from "react-redux";
+import {FC, useState} from "react";
 import Buttons from "./Buttons";
 
-const List = () => {
-  const [popUp, setPopUp] = useState(false);
+interface Props {
+  list: Pokemon[];
+  favourites?: boolean;
+}
 
-  const {pokemonList} = useSelector((state: any) => state);
+const List: FC<Props> = ({list, favourites}) => {
+  const [popUp, setPopup] = useState(false);
   const dispatch = useDispatch();
-  useEffect(() => {
-    const fetchData = async (): Promise<void> => {
-      const data: PokemonList = await fetchAllPokemons();
-      dispatch(setPokemonListAction(data));
-    };
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -28,15 +23,16 @@ const List = () => {
       behavior: "smooth",
     });
   };
-
-  if (!pokemonList || Object.keys(pokemonList).length === 0) {
-    return <Spinner />;
-  }
-
   return (
     <section className="list">
-      <Buttons />
-      {pokemonList.results.map((pokemon: NameUrlPair) => (
+      {favourites ? (
+        <header className="list__header">
+          <h1>Favourites</h1>
+        </header>
+      ) : (
+        <Buttons />
+      )}
+      {list.map((pokemon: NameUrlPair | Pokemon) => (
         <article key={uuid()} className="list__container">
           <h2>{pokemon.name}</h2>
           <button
@@ -44,7 +40,7 @@ const List = () => {
               scrollToTop();
               const data: Pokemon = await fetchPokemon(pokemon.name);
               dispatch(setPokemonAction(data));
-              setPopUp(true);
+              setPopup(true);
               document.body.style.overflow = "hidden";
             }}
           >
@@ -52,7 +48,7 @@ const List = () => {
           </button>
         </article>
       ))}
-      {popUp ? <Popup popUp={popUp} setPopUp={setPopUp} /> : null}
+      {popUp ? <Popup popUp={popUp} setPopUp={setPopup} /> : null}
     </section>
   );
 };
