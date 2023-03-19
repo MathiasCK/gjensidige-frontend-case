@@ -7,6 +7,7 @@ import {fetchPokemon} from "@Utils/utils";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import uuid from "react-uuid";
+import Empty from "./Empty";
 
 const Favourites = () => {
   const {favouritesList} = useSelector((state: any) => state);
@@ -18,7 +19,7 @@ const Favourites = () => {
   }
 
   if (favouritesList.length === 0) {
-    return <div>Empty</div>;
+    return <Empty />;
   }
 
   const scrollToTop = () => {
@@ -30,7 +31,9 @@ const Favourites = () => {
 
   return (
     <section className="list">
-      <Buttons />
+      <header className="list__header">
+        <h1>Favourites</h1>
+      </header>
       {favouritesList.map((pokemon: NameUrlPair) => (
         <article key={uuid()} className="list__container">
           <h2>{pokemon.name}</h2>

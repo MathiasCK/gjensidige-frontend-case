@@ -21,6 +21,16 @@ body {
   background: #f7f7f7;
 }
 
+.list__header {
+  color: $blue;
+  text-align: center;
+  margin: 1rem 0;
+  h1 {
+    font-size: 2.5rem;
+    font-family: $header;
+  }
+}
+
 button {
   font-family: $paragraph;
   font-weight: 100;
