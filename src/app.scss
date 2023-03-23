@@ -40,6 +40,9 @@ button {
   padding: 0.25rem;
   margin: 0 0.5rem;
   border: 1px solid $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: $blue;
   background: transparent;
   transition: $transition;
