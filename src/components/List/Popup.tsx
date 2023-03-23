@@ -1,6 +1,7 @@
-import {FC} from "react";
+import {FC, useRef} from "react";
 import {useSelector} from "react-redux";
 import {Moves, Spinner, Header, Stats} from "@Components";
+import {useClickOutside} from "@Utils/hooks";
 
 interface Props {
   popUp: boolean;
@@ -8,6 +9,13 @@ interface Props {
 }
 
 const Popup: FC<Props> = ({popUp, setPopUp}) => {
+  const popUpRef = useRef(null);
+
+  useClickOutside(popUpRef, () => {
+    if (popUp) {
+      setPopUp(false);
+    }
+  });
   const {pokemon} = useSelector((state: any) => state);
 
   if (!pokemon || Object.keys(pokemon).length === 0) {
@@ -17,7 +25,7 @@ const Popup: FC<Props> = ({popUp, setPopUp}) => {
   return (
     <>
       <div className="popup__bg"></div>
-      <div className="popup__container">
+      <div ref={popUpRef} className="popup__container">
         <div className="popup">
           <Header />
           <Moves />
